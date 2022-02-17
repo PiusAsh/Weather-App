@@ -35,11 +35,18 @@ header i{
 .wrapper .input-part{
     margin: 20px 25px 30px;
     /* display: none; */
-    margin: 20px 25px 30px;
 }
 .wrapper.active header{
     font-size: 30px;
     margin-left: 5px;
+}
+.wrapper.active header i{
+    font-size: 30px;
+    margin-left: 5px;
+}
+.wrapper.active .input-part{
+    display: none;
+
 }
 .input-part :where(input, button){
 width: 100%;
@@ -71,8 +78,9 @@ font-size: 18px;
 .separator::before{
     content: "or";
     background: #fff;
-    padding: 0 25px;
     color: #ccc;
+    font-size: 19px;
+    padding: 0 15px;
 
 }
 
@@ -89,11 +97,12 @@ font-size: 18px;
 
 .info-txt.error{
     color: #ff3500;
-    display: block;
     background: #ffffff;
     border: 1px solid #ccc;
+    display: block;
 }
 .info-txt.pending{
+    display: none;
     color: #ff3500;
     display: block;
     background: #d1ecf1;
@@ -110,6 +119,10 @@ font-size: 18px;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+.wrapper.active .input-part{
+    display: none;
+    /* something to be changed */
 }
 .wrapper-part img{
     max-width: 125px;
@@ -173,6 +186,81 @@ margin-right: 5px;
     font-size: 17px;
     padding: 0 2px 0 1px;
 }
+.input-part input:is(:focus, :valid){
+    border: 2px solid #524ab0;
+}
 .details p{
 
+}
+
+.wrapper .weather-part{
+    margin: 30px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.weather-part img{
+    max-width: 125px;
+}
+.weather-part .temp{
+    display: flex;
+    font-size: 72px;
+    font-weight: 500;
+}
+.weather-part .temp .numb{
+    font-weight: 600;
+}
+.weather-part .temp .deg{
+    font-size: 40px;
+    margin: 10px 5px 0 0;
+    display: block;
+}
+.weather-part .location{
+    font-size: 21px;
+    display: flex;
+    align-items: center;
+    font-size: 21px;
+    margin-bottom: 30px;
+}
+.location i{
+    font-size: 22px;
+    margin-right: 5px;
+}
+.weather-part .bottom-details{
+    /* background: red; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #ccc;
+
+}
+.bottom-details.column{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+}
+.column i{
+    color: #524ab0;
+    font-size: 40px;
+}
+.column.humidity{
+    border-left: 1px solid #ccc;
+}
+.details .temp, .humidity span{
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: -3px;
+}
+.details .temp .deg{
+    margin: 0;
+    font-size: 17px;
+    padding: 0 2px 0 1px;
+}
+.details p{
+    font-size: 14px;
+    margin-top: -6px;
 }
